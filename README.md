@@ -1,7 +1,7 @@
 ## Hey <img src="https://raw.githubusercontent.com/TheDudeThatCode/TheDudeThatCode/master/Assets/Hi.gif" width="29px">, I'm [Yannick!](https://yandesign.fr) ![visitors](https://visitor-badge.laobi.icu/badge?page_id=YanLords.YanLords)
 
 <p align="center">
-  <img src="assets/banner.svg" alt="Yannick Simoens — Directeur artistique junior, Planete Pyro Dist." width="820"/><br>
+  <img src="assets/banner.png" alt="Yannick Simoens — Directeur artistique junior, Planete Pyro Dist." width="100%"/><br>
 </p>
 
 <p align="center">
