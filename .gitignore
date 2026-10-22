@@ -1,0 +1,9 @@
+*.py
+*.html
+!assets/hero.source.html
+banner*.png
+hero_*.png
+ref_README.md
+urls_raw.txt
+yd_*
+*.svg.png
