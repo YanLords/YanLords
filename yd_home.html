@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yandesign — Communication Digitale & Branding</title>
+  <meta name="description" content="Yandesign — Solutions de communication digitale et branding pour les entreprises. Cartes virtuelles connectées, identité visuelle, présence en ligne." />
+  <meta name="keywords" content="communication digitale, branding, carte de visite virtuelle, VCarte, identité visuelle, design B2B" />
+  <link rel="canonical" href="https://yandesign.fr/" />
+  <meta property="og:title" content="Yandesign — Communication Digitale & Branding" />
+  <meta property="og:description" content="Solutions digitales sur-mesure pour faire rayonner votre marque." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yandesign.fr/" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:image" content="https://yandesign.fr/Public/project_003_identite.png" />
+  <meta property="og:image:alt" content="Identité visuelle et branding par Yandesign" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Yandesign — Communication Digitale & Branding" />
+  <meta name="twitter:description" content="Solutions digitales sur-mesure pour faire rayonner votre marque." />
+  <meta name="twitter:image" content="https://yandesign.fr/Public/project_003_identite.png" />
+  <link rel="icon" type="image/svg+xml" href="/Public/Logo_Noir.svg" />
+  <link rel="stylesheet" href="style.css?v=2" />
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Yandesign",
+      "url": "https://yandesign.fr/",
+      "image": "https://yandesign.fr/Public/project_003_identite.png",
+      "logo": "https://yandesign.fr/Public/Logo_Noir.svg",
+      "description": "Studio de communication digitale et branding sur-mesure pour les entreprises.",
+      "areaServed": "France",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Paris",
+        "addressCountry": "FR"
+      },
+      "email": "hello@yandesign.fr"
+    }
+  </script>
+  <script>(function () { var t = localStorage.getItem('theme'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); })();</script>
+</head>
+
+<body>
+
+  <!-- 00. INTRO -->
+  <div id="intro">
+    <div id="intro-scanlines" aria-hidden="true"></div>
+
+    <img id="intro-logo" src="Public/Logo_Blanc.svg" alt="Logo Yandesign, studio de communication digitale et branding" />
+
+    <!-- Phase 1 : ENTER -->
+    <div id="intro-coin">
+      <p id="intro-insert">&#x25BA; ENTER THE STUDIO &#x25C4;</p>
+    </div>
+
+    <!-- Phase 2 : loader (caché au départ) -->
+    <div id="intro-loader">
+      <p id="intro-loading-label">LOADING EXPERIENCE...</p>
+      <div id="intro-bar-wrap" aria-hidden="true">
+        <div id="intro-bar-fill"></div>
+      </div>
+      <p id="intro-bar-pct" aria-live="polite">0%</p>
+    </div>
+  </div>
+
+  <div id="maintenance-lock" class="maintenance-lock" aria-hidden="true">
+    <div class="maintenance-lock__noise" aria-hidden="true"></div>
+    <div class="maintenance-lock__panel" role="dialog" aria-modal="true" aria-labelledby="maintenance-lock-title">
+      <p class="maintenance-lock__eyebrow">POST-LOAD INCIDENT REPORT</p>
+      <h2 id="maintenance-lock-title" class="maintenance-lock__title">Le portfolio s'est auto-confisqué.</h2>
+      <p class="maintenance-lock__lead">
+        Les visiteurs ont bien chargé le site, ce qui était une erreur stratégique.
+        L'accès complet est suspendu pendant les travaux et l'ego du studio est en réassemblage.
+      </p>
+
+      <div class="maintenance-lock__grid">
+        <div class="maintenance-lock__card maintenance-lock__card--status">
+          <p class="maintenance-lock__label">Etat du chantier</p>
+          <p id="maintenance-status-line" class="maintenance-lock__status">Calibration des pixels nerveux...</p>
+          <div class="maintenance-lock__meter" aria-hidden="true">
+            <span></span>
+          </div>
+        </div>
+
+        <div class="maintenance-lock__card maintenance-lock__card--reasons">
+          <p class="maintenance-lock__label">Motifs officiels</p>
+          <ul class="maintenance-lock__list">
+            <li>Un bouton a pris trop confiance.</li>
+            <li>Le branding refuse d'être vu en chantier.</li>
+            <li>La direction artistique demande un effet dramatique.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="maintenance-lock__actions">
+        <button id="maintenance-excuse-btn" class="maintenance-lock__btn" type="button">Demander un passe-droit</button>
+        <button id="maintenance-refresh-btn" class="maintenance-lock__btn maintenance-lock__btn--ghost" type="button">Actualiser inutilement</button>
+      </div>
+
+      <p id="maintenance-punchline" class="maintenance-lock__punchline" aria-live="polite">
+        Aucune exception n'est prévue, même pour les gens "juste curieux".
+      </p>
+    </div>
+  </div>
+
+  <!-- NAV — en dehors de #main pour éviter les conflits de stacking context -->
+  <nav id="nav" style="opacity:0;visibility:hidden;">
+    <div class="nav-side nav-side--brand">
+      <img src="Public/Logo_Blanc.svg" class="nav-logo" alt="Logo Yandesign" />
+      <div class="nav-brand-meta" aria-hidden="true">
+        <span class="nav-brand-meta__title">YANDESIGN.EXE</span>
+        <span class="nav-brand-meta__status"><span class="nav-brand-meta__dot"></span> ONLINE</span>
+      </div>
+    </div>
+    <div class="nav-core">
+      <ul>
+        <li><a href="#accueil"><span class="nav-n">01</span><span class="nav-l" data-content="navigation.accueil">ACCUEIL</span></a></li>
+        <li><a href="#ia"><span class="nav-n">02</span><span class="nav-l" data-content="navigation.ia">SERVICES</span></a></li>
+        <li><a href="#design"><span class="nav-n">03</span><span class="nav-l" data-content="navigation.design">DESIGN</span></a></li>
+        <li><a href="#temoignages"><span class="nav-n">04</span><span class="nav-l" data-content="navigation.temoignages">AVIS</span></a></li>
+        <li><a href="#contact"><span class="nav-n">05</span><span class="nav-l" data-content="navigation.contact">CONTACT</span></a></li>
+        <li><a href="#jeux"><span class="nav-n">06</span><span class="nav-l" data-content="navigation.jeux">ADN</span></a></li>
+        <li><a href="#photo"><span class="nav-n">07</span><span class="nav-l" data-content="navigation.photo">PHOTO</span></a></li>
+      </ul>
+    </div>
+    <div class="nav-side nav-side--tools">
+      <div class="nav-system" aria-hidden="true">
+        <span class="nav-system__label">MODE</span>
+        <span class="nav-system__value">CRT</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN ONE-PAGE -->
+  <main id="main" class="hidden">
+
+    <!-- 01. ACCUEIL -->
+    <section id="accueil" class="section section--home">
+      <div class="section__inner section__inner--home" data-num="01">
+        <div class="hero-boss-screen" aria-hidden="true">
+          <div class="hero-boss-screen__glow"></div>
+          <div class="hero-boss-screen__grid"></div>
+          <div class="hero-boss-screen__scan"></div>
+          <div class="hero-boss-screen__word">SIGNAL</div>
+          <div class="hero-boss-screen__word hero-boss-screen__word--ghost">SYSTEM</div>
+          <div class="hero-boss-screen__target">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <!-- Colonne gauche -->
+        <div class="hero-left">
+          <div class="hero-copy">
+            <h1 class="headline">
+              <span class="headline__intro" data-content="accueil.headline">Je crée des</span>
+              <span class="pixel-text headline__keyword" data-content="accueil.keyword">solutions.</span>
+              <span class="sr-only"> de communication digitale et branding sur-mesure pour les entreprises</span>
+            </h1>
+            <div class="hero-chips" aria-label="Expertises">
+              <span class="hero-chip">Branding</span>
+              <span class="hero-chip">Comm. Digitale</span>
+              <span class="hero-chip hero-chip--accent">Outils metier</span>
+            </div>
+            <p class="hero-note" data-content="accueil.heroNote">Identités visuelles, surfaces digitales et outils terrain conçus pour faire circuler le bon signal avec moins de bruit.</p>
+            <button class="btn-order" id="btn-order-project" type="button">
+              <span data-content="accueil.cta">Démarrer un projet</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="hero-code-window" aria-label="Fenêtre de code animée">
+            <div class="hero-code-window__bar">
+              <span></span><span></span><span></span>
+              <p class="hero-code-window__title" data-content="accueil.bootTitle">studio.boot / render-feed.js</p>
+            </div>
+            <div class="hero-code-window__viewport">
+              <div class="hero-code-window__boot" aria-hidden="true">
+
+                <div class="hero-code-window__bootlog" id="boot-log">
+                  <p><span class="boot-prompt">$</span> <span class="boot-line-text"></span><span class="boot-typing-cursor">█</span></p>
+                  <p class="boot-log-line" style="opacity:0"><span class="boot-tag boot-tag--ok">[&nbsp;OK&nbsp;]</span> <span data-content="accueil.bootLog.0">visual_kernel.init</span></p>
+                  <p class="boot-log-line" style="opacity:0"><span class="boot-tag boot-tag--ok">[&nbsp;OK&nbsp;]</span> <span data-content="accueil.bootLog.1">services.map</span></p>
+                  <p class="boot-log-line" style="opacity:0"><span class="boot-tag boot-tag--rdy">[READY]</span> <span data-content="accueil.bootLog.2">studio online</span><span class="hero-code-window__cursor">█</span></p>
+                </div>
+
+                <div class="hero-code-window__progress">
+                  <span class="hero-code-window__progress-prefix" data-content="accueil.progressPrefix">SYS</span>
+                  <div class="hero-code-window__progress-ascii" aria-hidden="true">
+                    <span class="hero-code-window__progress-bracket">[</span>
+                    <span class="hero-code-window__progress-track">
+                      <span class="hero-code-window__progress-empty">░░░░░░░░░░░░░░░░</span>
+                      <span class="hero-code-window__progress-fill">████████████████</span>
+                    </span>
+                    <span class="hero-code-window__progress-bracket">]</span>
+                  </div>
+                  <span class="hero-code-window__progress-percent" id="boot-pct">0%</span>
+                </div>
+
+                <div class="hero-code-window__modules">
+                  <div class="hero-code-window__module hero-code-window__module--1">
+                    <span class="hero-code-window__num">[ 01 ] ──────────────</span>
+                    <span class="hero-code-window__name" data-content="accueil.modules.0.name">BRANDING</span>
+                    <span class="hero-code-window__desc">▸ <span data-content="accueil.modules.0.desc">SIGNAL CLAIR</span></span>
+                  </div>
+                  <div class="hero-code-window__module hero-code-window__module--2">
+                    <span class="hero-code-window__num">[ 02 ] ──────────────</span>
+                    <span class="hero-code-window__name" data-content="accueil.modules.1.name">DIGITAL</span>
+                    <span class="hero-code-window__desc">▸ <span data-content="accueil.modules.1.desc">PRÉSENCE ACTIVE</span></span>
+                  </div>
+                  <div class="hero-code-window__module hero-code-window__module--3">
+                    <span class="hero-code-window__num">[ 03 ] ──────────────</span>
+                    <span class="hero-code-window__name" data-content="accueil.modules.2.name">VCARTE</span>
+                    <span class="hero-code-window__desc">▸ <span data-content="accueil.modules.2.desc">NFC + QR</span></span>
+                  </div>
+                  <div class="hero-code-window__module hero-code-window__module--4">
+                    <span class="hero-code-window__num">[ 04 ] ──────────────</span>
+                    <span class="hero-code-window__name" data-content="accueil.modules.3.name">SYSTÈME</span>
+                    <span class="hero-code-window__desc">▸ <span data-content="accueil.modules.3.desc">WEB / TERRAIN</span></span>
+                  </div>
+                </div>
+
+                <div class="hero-code-window__sysinfo">
+                  <span data-content="accueil.sysinfo.mem">MEM 64K</span>
+                  <span class="sysinfo-sep">│</span>
+                  <span data-content="accueil.sysinfo.cpu">CPU 100%</span>
+                  <span class="sysinfo-sep">│</span>
+                  <span data-content="accueil.sysinfo.os">YAN_OS v1.0</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Colonne droite : vitrine projets -->
+        <div class="hero-projects">
+          <p class="hero-projects__label" data-content="accueil.featuredLabel">// PROJETS EN AVANT</p>
+          <div class="hero-projects__grid" id="hero-projects-grid">
+
+            <a href="project.html?id=VCARTE" class="hero-proj-card">
+              <div class="hero-proj-card__visual hero-proj-card__visual--vcarte" aria-hidden="true">
+                <span class="hpc-bg-text">VC</span>
+                <div class="hpc-card-shape">
+                  <div class="hpc-dot hpc-dot--nfc"></div>
+                  <span class="hpc-tag">NFC</span>
+                </div>
+              </div>
+              <div class="hero-proj-card__content">
+                <div class="hpc-meta">
+                  <span class="hpc-cat">Produit Digital</span>
+                  <span class="hpc-year">2025</span>
+                </div>
+                <p class="hpc-title">VCarte</p>
+                <p class="hpc-desc">La carte de visite connectée. NFC, QR code, réseaux.</p>
+                <span class="hpc-arrow" aria-hidden="true">→</span>
+              </div>
+            </a>
+
+            <a href="project.html?id=BRANDING" class="hero-proj-card hero-proj-card--soon">
+              <div class="hero-proj-card__visual hero-proj-card__visual--branding" aria-hidden="true">
+                <span class="hpc-bg-text">YD</span>
+                <div class="hpc-lines">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="hero-proj-card__content">
+                <div class="hpc-meta">
+                  <span class="hpc-cat">Branding</span>
+                  <span class="hpc-year">À venir</span>
+                </div>
+                <p class="hpc-title">Identité Visuelle</p>
+                <p class="hpc-desc">Logo, charte graphique et système de marque.</p>
+                <span class="hpc-arrow" aria-hidden="true">→</span>
+              </div>
+            </a>
+
+            <a href="project.html?id=DIGITAL" class="hero-proj-card hero-proj-card--soon">
+              <div class="hero-proj-card__visual hero-proj-card__visual--digital" aria-hidden="true">
+                <span class="hpc-bg-text">DG</span>
+                <div class="hpc-grid-dots" aria-hidden="true"></div>
+              </div>
+              <div class="hero-proj-card__content">
+                <div class="hpc-meta">
+                  <span class="hpc-cat">Stratégie</span>
+                  <span class="hpc-year">À venir</span>
+                </div>
+                <p class="hpc-title">Communication Digitale</p>
+                <p class="hpc-desc">Présence en ligne et stratégie B2B sur-mesure.</p>
+                <span class="hpc-arrow" aria-hidden="true">→</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <div class="hero-mascot" id="hero-mascot" aria-label="Mascotte interactive" title="Glisser-déposer">
+          <span class="hero-mascot__shadow"></span>
+          <span class="hero-mascot__orb"></span>
+          <span class="hero-mascot__hint">DRAG</span>
+        </div>
+
+      </div>
+      <div class="hero-scroll" aria-hidden="true">
+        <span class="hero-scroll__label">SCROLL</span>
+        <span class="hero-scroll__line"></span>
+      </div>
+    </section>
+
+    <!-- Barre info bas hero (hors grid, collée sous la section) -->
+    <div class="hero-bar" aria-hidden="true">
+      <span data-content="accueil.status.city">Paris, FR</span>
+      <span class="hero-bar__sep">✦</span>
+      <span><span data-content="accueil.status.availability">Disponible</span> <span class="hero-bar__dot"></span></span>
+      <span class="hero-bar__sep">✦</span>
+      <span data-content="accueil.status.studio">Studio B2B</span>
+      <span class="hero-bar__sep">✦</span>
+      <span data-content="accueil.status.established">Est. 2025</span>
+    </div>
+
+    <!-- TICKER 01 -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span data-content="accueil.ticker.0">Branding</span><span class="ticker__sep">✦</span>
+        <span data-content="accueil.ticker.1">VCarte NFC</span><span class="ticker__sep">✦</span>
+        <span data-content="accueil.ticker.2">Communication Digitale</span><span class="ticker__sep">✦</span>
+        <span data-content="accueil.ticker.3">Identité Visuelle</span><span class="ticker__sep">✦</span>
+        <span data-content="accueil.ticker.4">Studio B2B</span><span class="ticker__sep">✦</span>
+        <span data-content="accueil.ticker.0">Branding</span><span class="ticker__sep">✦</span>
+        <span data-content="accueil.ticker.1">VCarte NFC</span><span class="ticker__sep">✦</span>
+        <span data-content="accueil.ticker.2">Communication Digitale</span><span class="ticker__sep">✦</span>
+        <span data-content="accueil.ticker.3">Identité Visuelle</span><span class="ticker__sep">✦</span>
+        <span data-content="accueil.ticker.4">Studio B2B</span><span class="ticker__sep">✦</span>
+      </div>
+    </div>
+
+    <section class="section section--transition-aoe" aria-label="Transition vers les réalisations">
+      <div class="section__inner section__inner--transition-aoe">
+        <div class="transition-aoe__copy">
+          <p class="transition-aoe__label" data-content="transition.label">LOADOUT / NEXT AREA</p>
+          <h2 class="transition-aoe__headline" data-content="transition.headline">Du signal à la matière.</h2>
+          <p class="transition-aoe__text" data-content="transition.text">Identités, interfaces et objets connectés pensés pour exister hors du simple écran.</p>
+          <div class="transition-aoe__stats" aria-hidden="true">
+            <span data-content="transition.tags.0">[ BRAND ]</span>
+            <span data-content="transition.tags.1">[ DIGITAL ]</span>
+            <span data-content="transition.tags.2">[ NFC ]</span>
+          </div>
+        </div>
+        <div class="transition-aoe__scene">
+          <div class="transition-aoe__hud" aria-hidden="true">
+            <span class="hud-stage" data-content="transition.hudStage">STAGE_02</span>
+            <span class="hud-center"><span class="hud-dot"></span><span id="hud-nfc-status" data-content="transition.hudReady">NFC READY</span></span>
+            <span id="hud-nfc-rssi">──</span>
+          </div>
+          <div class="contact-connect" aria-hidden="true">
+
+            <div class="cc-words" aria-hidden="true">
+              <span class="cc-words__prompt">&gt;</span>
+              <span class="cc-words__text"></span><span class="cc-words__cursor">█</span>
+            </div>
+
+            <div class="contact-connect__phone">
+              <div class="contact-connect__phone-top">
+                <span class="contact-connect__camera"></span>
+              </div>
+              <div class="contact-connect__screen">
+                <div class="contact-connect__screen-state contact-connect__screen-state--off"></div>
+
+                <div class="contact-connect__screen-state contact-connect__screen-state--loading">
+                  <span class="contact-connect__screen-label" data-content="transition.screenLabel">VCARTE</span>
+                  <span class="contact-connect__screen-loader" data-content="transition.screenLoader">LOADING PROFILE...</span>
+                  <span class="contact-connect__screen-bar">
+                    <span class="contact-connect__screen-bar-fill"></span>
+                  </span>
+                </div>
+
+                <div class="contact-connect__screen-state contact-connect__screen-state--profile">
+                  <span class="contact-connect__screen-avatar"></span>
+                  <span class="contact-connect__screen-name" data-content="transition.screenName">YANNICK DESIGN</span>
+                  <span class="contact-connect__screen-role" data-content="transition.screenRole">BRANDING / DIGITAL</span>
+                  <span class="contact-connect__screen-line"></span>
+                  <span class="contact-connect__screen-line contact-connect__screen-line--short"></span>
+                  <span class="contact-connect__screen-chip"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-connect__signal">
+              <span></span><span></span><span></span><span></span>
+            </div>
+
+            <div class="contact-connect__card">
+              <span class="contact-connect__card-tag" data-content="transition.cardTag">NFC</span>
+              <span class="contact-connect__card-name" data-content="transition.cardName">VCARTE</span>
+              <span class="contact-connect__card-line"></span>
+              <span class="contact-connect__card-dot"></span>
+            </div>
+
+            <div class="contact-connect__badge">
+              <span class="contact-connect__badge-hole"></span>
+              <span class="contact-connect__badge-tag" data-content="transition.badgeTag">NFC</span>
+              <span class="contact-connect__badge-name" data-content="transition.badgeName">BADGE</span>
+              <span class="contact-connect__badge-line"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="design" class="section section--design">
+      <div class="section__inner section__inner--design" data-num="02">
+        <div class="design-intro">
+          <h2 data-content="design.title">Fait pour<br /><em>durer.</em></h2>
+          <p class="body-text" data-content="design.body">Identité visuelle, interfaces et solutions connectées.<br />Chaque projet est conçu pour servir vos objectifs.</p>
+          <div class="design-orbit" aria-hidden="true">
+            <div class="design-orbit__ring">
+              <span class="design-orbit__dot design-orbit__dot--1"></span>
+              <span class="design-orbit__dot design-orbit__dot--2"></span>
+              <span class="design-orbit__dot design-orbit__dot--3"></span>
+            </div>
+            <div class="design-orbit__core"></div>
+          </div>
+        </div>
+        <div class="grid grid--design" id="design-projects-container">
+          <a href="project.html?id=VCARTE" style="text-decoration:none;color:inherit;">
+            <div class="card card--placeholder">
+              <div class="card__visual card__visual--vcarte" aria-hidden="true">
+                <span class="card__visual-bg">VC</span>
+                <div class="card__visual-shape"></div>
+              </div>
+              <div class="card__meta">
+                <div class="card__header">
+                  <span class="card__num">Produit Digital</span>
+                  <span class="card__year">2025</span>
+                </div>
+                <div class="card__bar"></div>
+                <p class="card__title">VCarte</p>
+                <p class="card__desc">La carte de visite professionnelle réinventée. NFC, QR code et réseaux en un tap.</p>
+                <span class="card__arrow" aria-hidden="true">→</span>
+              </div>
+            </div>
+          </a>
+          <a href="project.html?id=BRANDING" style="text-decoration:none;color:inherit;">
+            <div class="card card--placeholder card--soon">
+              <div class="card__visual card__visual--branding" aria-hidden="true">
+                <span class="card__visual-bg">YD</span>
+                <div class="card__visual-lines"><span></span><span></span><span></span></div>
+              </div>
+              <div class="card__meta">
+                <div class="card__header">
+                  <span class="card__num">Branding</span>
+                  <span class="card__year">À venir</span>
+                </div>
+                <div class="card__bar"></div>
+                <p class="card__title">Identité Visuelle</p>
+                <p class="card__desc">Identité de marque complète : logo, charte graphique et système visuel cohérent.</p>
+                <span class="card__arrow" aria-hidden="true">→</span>
+              </div>
+            </div>
+          </a>
+          <a href="project.html?id=DIGITAL" style="text-decoration:none;color:inherit;">
+            <div class="card card--placeholder card--soon">
+              <div class="card__visual card__visual--digital" aria-hidden="true">
+                <span class="card__visual-bg">DG</span>
+                <div class="card__visual-dots"></div>
+              </div>
+              <div class="card__meta">
+                <div class="card__header">
+                  <span class="card__num">Stratégie</span>
+                  <span class="card__year">À venir</span>
+                </div>
+                <div class="card__bar"></div>
+                <p class="card__title">Communication Digitale</p>
+                <p class="card__desc">Stratégie de communication digitale et présence en ligne pour les entreprises B2B.</p>
+                <span class="card__arrow" aria-hidden="true">→</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. INTELLIGENCE ARTIFICIELLE -->
+    <section id="ia" class="section section--ia">
+      <canvas class="services-bg-canvas" aria-hidden="true"></canvas>
+      <div class="section__inner section__inner--services" data-num="03">
+        <div class="services-intro">
+          <h2 data-content="ia.title">Nos<br /><em>solutions.</em></h2>
+          <div class="ia-layout__left">
+            <p class="body-text" data-content="ia.body">Des outils pensés pour votre image et votre croissance.<br />De la carte de visite connectée à l'identité complète.</p>
+            <div class="ia-signal">
+              <div class="aw-animation" aria-hidden="true"></div>
+              <div class="ia-signal__meta">
+                <span data-content="ia.signalTags.0">Branding</span>
+                <span data-content="ia.signalTags.1">Digital</span>
+                <span data-content="ia.signalTags.2">NFC</span>
+                <span data-content="ia.signalTags.3">Web</span>
+              </div>
+            </div>
+            <div class="terminal">
+              <div class="terminal__bar">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="terminal__body">
+                <p><span class="prompt">~/yandesign $</span> <span class="cmd" data-content="ia.terminal.0">ls services/</span></p>
+                <p class="output" data-content="ia.terminal.1">vcarte/ branding/ digital-comms/</p>
+                <p><span class="prompt">~/yandesign $</span> <span class="cmd" data-content="ia.terminal.2">cat stack.txt</span></p>
+                <p class="output" data-content="ia.terminal.3">identite-systeme / activation / supports</p>
+                <p><span class="prompt">~/yandesign $</span> <span class="cursor">▋</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="services-board">
+          <div class="services-board__head">
+            <p class="services-board__label" data-content="ia.boardLabel">SERVICE MAP</p>
+            <p class="services-board__note" data-content="ia.boardNote">Des briques activables seules ou combinées selon votre besoin.</p>
+          </div>
+          <p class="services-board__intro">Un système plus lisible, plus éditorial, qui garde les codes pixel et néon comme accents de marque plutôt que comme bruit permanent.</p>
+          <div class="services-combos" aria-label="Compositions de services">
+            <div class="services-combo" data-step="1">
+              <p class="services-combo__tag" data-content="ia.combos.0.tag">START</p>
+              <p class="services-combo__title" data-content="ia.combos.0.title">Signal de base</p>
+              <p class="services-combo__stack" data-content="ia.combos.0.stack">Branding</p>
+            </div>
+            <span class="services-combo__sep" aria-hidden="true">→</span>
+            <div class="services-combo" data-step="2">
+              <p class="services-combo__tag" data-content="ia.combos.1.tag">ACTIVE</p>
+              <p class="services-combo__title" data-content="ia.combos.1.title">Présence active</p>
+              <p class="services-combo__stack" data-content="ia.combos.1.stack">Branding + Digital</p>
+            </div>
+            <span class="services-combo__sep" aria-hidden="true">→</span>
+            <div class="services-combo" data-step="3">
+              <p class="services-combo__tag" data-content="ia.combos.2.tag">FIELD</p>
+              <p class="services-combo__title" data-content="ia.combos.2.title">Système terrain</p>
+              <p class="services-combo__stack" data-content="ia.combos.2.stack">Branding + VCarte + Web</p>
+            </div>
+          </div>
+          <p class="services-board__sublabel" data-content="ia.boardSublabel">── BRIQUES INDIVIDUELLES</p>
+          <div class="ia-layout__right">
+            <div class="ia-cards">
+              <a href="lab.html?id=EXP_001" style="text-decoration:none;color:inherit;display:block;">
+                <div class="ia-card ia-card--featured" data-service="vcarte">
+                  <svg class="ia-card__icon" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                    <rect x="2" y="7" width="28" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="2" y1="13" x2="30" y2="13" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M21 20 Q23 16 21 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+                    <path d="M24.5 21.5 Q27.5 16 24.5 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+                  </svg>
+                  <p class="ia-card__tag">VCARTE</p>
+                  <p class="ia-card__title">Carte Virtuelle Connectée</p>
+                  <p class="ia-card__desc">NFC, QR code, réseaux et plugins. Votre identité professionnelle en un tap.</p>
+                  <div class="ia-card__capsules" aria-hidden="true">
+                    <span>NFC</span>
+                    <span>QR</span>
+                    <span>PROFILE</span>
+                  </div>
+                  <span class="ia-card__cta">→ Découvrir</span>
+                </div>
+              </a>
+              <div class="ia-card-stack">
+                <a href="lab.html?id=EXP_002" style="text-decoration:none;color:inherit;display:block;">
+                  <div class="ia-card" data-service="branding">
+                    <svg class="ia-card__icon" width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+                      <polygon points="13,2 24,13 13,24 2,13" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+                      <line x1="2" y1="13" x2="24" y2="13" stroke="currentColor" stroke-width="1.4"/>
+                      <line x1="13" y1="2" x2="13" y2="24" stroke="currentColor" stroke-width="1.4"/>
+                    </svg>
+                    <p class="ia-card__tag">BRANDING</p>
+                    <p class="ia-card__title">Identité Visuelle</p>
+                    <p class="ia-card__desc">Logo, charte graphique et communication visuelle cohérente pour votre marque.</p>
+                    <span class="ia-card__cta">→</span>
+                  </div>
+                </a>
+                <a href="lab.html?id=EXP_003" style="text-decoration:none;color:inherit;display:block;">
+                  <div class="ia-card" data-service="digital">
+                    <svg class="ia-card__icon" width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+                      <line x1="4"  y1="24" x2="4"  y2="18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                      <line x1="10" y1="24" x2="10" y2="13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                      <line x1="16" y1="24" x2="16" y2="8"  stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                      <line x1="22" y1="24" x2="22" y2="3"  stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                    </svg>
+                    <p class="ia-card__tag">DIGITAL</p>
+                    <p class="ia-card__title">Présence Active</p>
+                    <p class="ia-card__desc">Site, contenus et relais digitaux pensés pour rendre votre activité lisible et active.</p>
+                    <span class="ia-card__cta">→</span>
+                  </div>
+                </a>
+                <a href="lab.html?id=EXP_004" style="text-decoration:none;color:inherit;display:block;">
+                  <div class="ia-card ia-card--mini" data-service="systeme">
+                    <svg class="ia-card__icon" width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+                      <rect x="2"  y="2"  width="9" height="9" stroke="currentColor" stroke-width="1.4"/>
+                      <rect x="15" y="2"  width="9" height="9" stroke="currentColor" stroke-width="1.4"/>
+                      <rect x="2"  y="15" width="9" height="9" stroke="currentColor" stroke-width="1.4"/>
+                      <rect x="15" y="15" width="9" height="9" stroke="currentColor" stroke-width="1.4"/>
+                    </svg>
+                    <p class="ia-card__tag">SYSTÈME</p>
+                    <p class="ia-card__title">Web / Terrain</p>
+                    <p class="ia-card__desc">Une même logique de marque entre support physique, interface et usage réel.</p>
+                    <span class="ia-card__cta">→</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. JEUX VIDÉO -->
+    <section id="jeux" class="section section--jeux">
+      <div class="jeux-bg" aria-hidden="true">
+        <div class="jeux-bg__fleet">
+          <span class="retro-impact retro-impact--1"></span>
+          <span class="retro-impact retro-impact--2"></span>
+          <span class="retro-impact retro-impact--3"></span>
+          <div class="retro-ship">
+            <span class="retro-ship__beam retro-ship__beam--1"></span>
+            <span class="retro-ship__beam retro-ship__beam--2"></span>
+            <span class="retro-ship__beam retro-ship__beam--3"></span>
+            <span class="retro-ship__trail"></span>
+            <span class="retro-ship__body">
+              <span class="retro-ship__wing retro-ship__wing--top"></span>
+              <span class="retro-ship__wing retro-ship__wing--bottom"></span>
+              <span class="retro-ship__cockpit"></span>
+              <span class="retro-ship__engine retro-ship__engine--1"></span>
+              <span class="retro-ship__engine retro-ship__engine--2"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="section__inner section__inner--jeux" data-num="05">
+        <div class="jeux-copy">
+          <h2 class="pixel-text pixel-text--large" data-content="jeux.title">LE PIXEL.</h2>
+          <p class="body-text" data-content="jeux.body">La créativité est notre moteur.<br />Elle nourrit chaque projet qu’on vous livre.</p>
+          <div class="jeux-copy__rail" aria-hidden="true">
+            <span data-content="jeux.rail.0">PLAY</span>
+            <span data-content="jeux.rail.1">PIXEL</span>
+            <span data-content="jeux.rail.2">LOGIC</span>
+          </div>
+          <div class="jeux-copy__manifeste" aria-hidden="true">
+            <p data-content="jeux.manifesto.0">▸ Craft d’abord, effets ensuite.</p>
+            <p data-content="jeux.manifesto.1">▸ Un projet = un système.</p>
+            <p data-content="jeux.manifesto.2">▸ Le détail fait la différence.</p>
+          </div>
+          <div class="jeux-copy__stats" aria-hidden="true">
+            <div class="jeux-stat" style="--i:0"><span class="jeux-stat__lbl" data-content="jeux.stats.0.label">CRAFT</span><span class="jeux-stat__bar"><em style="--w:.93"></em></span><span class="jeux-stat__num" data-content="jeux.stats.0.value">93</span></div>
+            <div class="jeux-stat" style="--i:1"><span class="jeux-stat__lbl" data-content="jeux.stats.1.label">DESIGN</span><span class="jeux-stat__bar"><em style="--w:.88"></em></span><span class="jeux-stat__num" data-content="jeux.stats.1.value">88</span></div>
+            <div class="jeux-stat" style="--i:2"><span class="jeux-stat__lbl" data-content="jeux.stats.2.label">MOTION</span><span class="jeux-stat__bar"><em style="--w:.75"></em></span><span class="jeux-stat__num" data-content="jeux.stats.2.value">75</span></div>
+            <div class="jeux-stat" style="--i:3"><span class="jeux-stat__lbl" data-content="jeux.stats.3.label">PIXEL</span><span class="jeux-stat__bar"><em style="--w:.97"></em></span><span class="jeux-stat__num" data-content="jeux.stats.3.value">97</span></div>
+          </div>
+        </div>
+        <div class="doodle-stage">
+          <div class="doodle-stage__head">
+            <p class="doodle-stage__label" data-content="jeux.arcadeLabel">PIXEL ARCADE</p>
+            <p class="doodle-stage__status" data-content="jeux.arcadeStatus">LIVE MODULE</p>
+          </div>
+          <div class="doodle-stage__body">
+            <div class="doodle-window">
+              <div class="doodle-container" tabindex="0">
+                <canvas id="doodle-canvas" width="360" height="504"></canvas>
+                <div id="doodle-hud">
+                  <span id="doodle-score">0</span>
+                </div>
+                <div id="doodle-leaderboard">
+                  <h3 data-content="jeux.highscoresTitle">HIGHSCORES</h3>
+                  <ol id="doodle-scores-list"></ol>
+                  <button id="doodle-start" class="theme-btn" data-content="jeux.startButton">[JOUER]</button>
+                </div>
+                <div id="doodle-overlay" class="hidden">
+                  <p data-content="jeux.gameOver">GAME OVER</p>
+                  <p><span data-content="jeux.finalScoreLabel">SCORE:</span> <span id="doodle-final-score">0</span></p>
+                  <form id="doodle-form" autocomplete="off">
+                    <input type="text" id="doodle-pseudo" data-content-placeholder="jeux.pseudoPlaceholder" placeholder="Entrez votre pseudo" maxlength="12" required />
+                    <button type="submit" id="doodle-submit" class="theme-btn" data-content="jeux.saveButton">ENREGISTRER</button>
+                  </form>
+                  <button id="doodle-restart" class="theme-btn" data-content="jeux.restartButton">[REJOUER]</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. PHOTOGRAPHIE -->
+    <section id="photo" class="section section--photo">
+      <div class="section__inner">
+        <h2 data-content="photo.title">Ombre<br />&amp; Lumière.</h2>
+        <p class="body-text" data-content="photo.body">La photographie au service de votre communication visuelle.<br />Portraits de marque, produits, reportages corporate.</p>
+        <div class="photo-gallery" id="photo-gallery-container">
+          <div class="photo-slot photo-slot--1">
+            <div class="photo-placeholder">
+              <span>© Photo</span>
+            </div>
+          </div>
+          <div class="photo-slot photo-slot--2">
+            <div class="photo-placeholder">
+              <span>© Photo</span>
+            </div>
+          </div>
+          <div class="photo-slot photo-slot--3">
+            <div class="photo-placeholder">
+              <span>© Photo</span>
+            </div>
+          </div>
+          <div class="photo-slot photo-slot--4">
+            <div class="photo-placeholder">
+              <span>© Photo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07. TÉMOIGNAGES -->
+    <section id="temoignages" class="section section--temoignages">
+      <div class="section__inner">
+        <h2 data-content="temoignages.title">Ils nous ont fait confiance.</h2>
+        <p class="body-text" data-content="temoignages.body">Nous construisons nos premières références. Rejoignez l'aventure et façonnez votre image avec nous.</p>
+        <p class="temoignages-intro">Une mise en page plus calme, qui laisse davantage la place à la preuve et prépare mieux la conversion vers le contact.</p>
+        <div class="temoignages-grid">
+
+          <div class="temoignage-card temoignage-card--placeholder">
+            <div class="temoignage-card__quote">
+              <p class="temoignage-card__text" data-content="temoignages.cards.0.text">« Votre témoignage ici. Dites-nous comment Yandesign a transformé votre présence digitale. »</p>
+            </div>
+            <div class="temoignage-card__author">
+              <p class="temoignage-card__name" data-content="temoignages.cards.0.name">— Votre Nom</p>
+              <p class="temoignage-card__role" data-content="temoignages.cards.0.role">Fondateur · Votre Entreprise</p>
+            </div>
+          </div>
+
+          <div class="temoignage-card temoignage-card--placeholder">
+            <div class="temoignage-card__quote">
+              <p class="temoignage-card__text" data-content="temoignages.cards.1.text">« Partagez votre expérience avec VCarte ou votre projet de branding réalisé avec Yandesign. »</p>
+            </div>
+            <div class="temoignage-card__author">
+              <p class="temoignage-card__name" data-content="temoignages.cards.1.name">— Votre Nom</p>
+              <p class="temoignage-card__role" data-content="temoignages.cards.1.role">Directrice · Votre Entreprise</p>
+            </div>
+          </div>
+
+          <div class="temoignage-card temoignage-card--cta">
+            <p class="temoignage-card__cta-label" data-content="temoignages.ctaLabel">VOTRE AVIS ICI</p>
+            <p class="temoignage-card__cta-text" data-content="temoignages.ctaText">Vous êtes client Yandesign ? Partagez votre expérience.</p>
+            <a href="mailto:hello@yandesign.fr?subject=Témoignage" class="btn-order">
+              <span data-content="temoignages.ctaButton">Écrire un avis</span>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 08. CONTACT -->
+    <section id="contact" class="section section--contact">
+      <div class="section__inner section__inner--contact" data-num="08">
+        <h2 data-content="contact.title">Travaillons<br /><em>ensemble.</em></h2>
+        <p class="contact-intro">Si le fond te parle, on peut cadrer le signal, simplifier l’interface et construire un système de marque réellement utile.</p>
+        <div class="contact-links">
+          <a data-content-href="contact.email.mailto" class="contact-item">
+            <span class="contact-item__type" data-content="contact.emailLabel">EMAIL</span>
+            <span class="contact-item__value" data-content="contact.email">hello@yannick.dev</span>
+          </a>
+          <a data-content-href="contact.github.https" class="contact-item">
+            <span class="contact-item__type" data-content="contact.githubLabel">GITHUB</span>
+            <span class="contact-item__value" data-content="contact.github">github.com/yannick</span>
+          </a>
+          <a data-content-href="contact.linkedin.https" class="contact-item">
+            <span class="contact-item__type" data-content="contact.linkedinLabel">LINKEDIN</span>
+            <span class="contact-item__value" data-content="contact.linkedin">linkedin.com/in/yannick</span>
+          </a>
+          <a data-content-href="contact.twitter.https" class="contact-item">
+            <span class="contact-item__type" data-content="contact.twitterLabel">TWITTER / X</span>
+            <span class="contact-item__value" data-content="contact.twitter">@yannick</span>
+          </a>
+        </div>
+        <p class="footer-note">Yannick — <span id="year"></span></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL DEVIS -->
+  <div id="devis-modal" class="devis-modal" role="dialog" aria-modal="true" aria-labelledby="devis-modal-title" hidden>
+    <div class="devis-modal__backdrop"></div>
+    <div class="devis-modal__box">
+      <div class="dm-scanlines" aria-hidden="true"></div>
+      <div class="dm-corners" aria-hidden="true">
+        <span>┌──</span><span>──┐</span>
+        <span>└──</span><span>──┘</span>
+      </div>
+      <button class="devis-modal__close" id="devis-modal-close" aria-label="Fermer">[ ✕ ]</button>
+      <div class="dm-sys">
+        <span class="dm-sys__tag">SYS://YANDESIGN.FR</span>
+        <span class="dm-sys__blink" aria-hidden="true">█</span>
+      </div>
+      <p class="dm-title" id="devis-modal-title">Démarrer un projet</p>
+      <p class="dm-sub">→ Entrez votre adresse email.<br>Votre espace projet sera créé instantanément.</p>
+      <form id="devis-form" novalidate>
+        <div class="dm-input-wrap">
+          <span class="dm-prompt" aria-hidden="true">$_</span>
+          <input type="email" id="devis-email" placeholder="votre@email.com" autocomplete="email" required />
+        </div>
+        <button type="submit" class="devis-modal__submit">
+          <span>ACCÉDER À MON ESPACE</span>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <p id="devis-msg" class="devis-modal__msg" hidden></p>
+      </form>
+      <p class="dm-footer">✦ Lien personnel &amp; sécurisé · Ne pas partager</p>
+    </div>
+  </div>
+
+  <!-- Duke Nukem — easter egg + chat IA -->
+  <div id="duke" aria-hidden="true" title="Click to chat.">
+
+    <!-- Bulle de chat -->
+    <div id="duke-chat" class="duke-chat" aria-hidden="true" role="dialog" aria-label="Chat IA">
+      <div class="duke-chat__header">
+        <span class="duke-chat__title">// CHAT IA</span>
+        <button class="duke-chat__close" id="duke-chat-close" aria-label="Fermer">✕</button>
+      </div>
+      <div class="duke-chat__messages" id="duke-chat-messages"></div>
+      <form class="duke-chat__form" id="duke-chat-form" autocomplete="off">
+        <input class="duke-chat__input" id="duke-chat-input" type="text" placeholder="une question..."
+          maxlength="300" />
+        <button class="duke-chat__send" type="submit" aria-label="Envoyer">&#x25BA;</button>
+      </form>
+    </div>
+
+    <!-- Bulle call-to-action -->
+    <div id="duke-cta" class="duke-cta" aria-hidden="true">
+      <span>.</span><span>.</span><span>.</span>
+    </div>
+
+    <div id="duke-face">
+      <img id="duke-img" src="Public/Tête.svg" alt="Mascotte pixel art Yandesign liée au chat IA" />
+      <!-- Overlay SVG : masque les highlights statiques + highlights mobiles -->
+      <svg id="duke-pupils" viewBox="0 0 646 646" xmlns="http://www.w3.org/2000/svg">
+        <!-- Cache les highlights fixes de l'image source -->
+        <rect x="309.121" y="249.189" width="12.6172" height="12.6172" fill="#0F1123" />
+        <rect x="397.441" y="249.189" width="12.6172" height="12.6172" fill="#0F1123" />
+        <!-- Highlights dynamiques (suivent le curseur) -->
+        <circle id="duke-pupil-left" cx="315.4" cy="255.5" r="7" fill="#EAEDE7" />
+        <circle id="duke-pupil-right" cx="403.7" cy="255.5" r="7" fill="#EAEDE7" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- APP WINDOW STATUSBAR -->
+  <div id="app-statusbar" aria-hidden="true">
+    <span class="app-status__left"><span class="app-status__dot"></span>READY</span>
+    <span class="app-status__section" id="app-status-section">[ 01 / ACCUEIL ]</span>
+    <span class="app-status__right">Paris, FR &nbsp;✦&nbsp; Studio B2B &nbsp;✦&nbsp; Est. 2025</span>
+  </div>
+
+  <script src="main.js?v=2"></script>
+</body>
+
+</html>
