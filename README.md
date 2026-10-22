@@ -1,13 +1,13 @@
 ## Hey <img src="https://raw.githubusercontent.com/TheDudeThatCode/TheDudeThatCode/master/Assets/Hi.gif" width="29px">, I'm [Yannick!](https://yandesign.fr) ![visitors](https://visitor-badge.laobi.icu/badge?page_id=YanLords.YanLords)
 
 <p align="center">
-  <img src="https://github.com/SP-XD/SP-XD/blob/main/images/dev-working_rounded.gif?raw=true" width="550"/><br>
+  <img src="assets/banner.svg" alt="Yannick Simoens — Directeur artistique junior, Planete Pyro Dist." width="820"/><br>
 </p>
 
 <p align="center">
         <!-- Organisation  -->
         <samp>
-                「 Directeur artistique junior @ Planète Artifice 」
+                「 Directeur artistique junior @ Planete Pyro Dist. 」
                 <br>
                 「 Freelance & outils maison : <a href="https://yandesign.fr" target="_blank">yandesign.fr</a> 」
                 <br>
@@ -75,7 +75,7 @@
 <h3>🧩 &nbsp; Ce que je construis</h3>
 
 - **Pyrotechnie** — plans de tir, calculs de distances de sécurité, durées, PMA, export PDF
-- **Outils internes Planète Artifice** — bibliothèque documentaire self-hosted, intranet/extranet, découpe automatisée de rushes produits (Python + FFmpeg)
+- **Outils internes Planete Pyro Dist.** — bibliothèque documentaire self-hosted, intranet/extranet, découpe automatisée de rushes produits (Python + FFmpeg)
 - **Agents IA & CLI** — boucles d'agent, serveurs MCP (OCR Mistral), pipelines de dev assistés
 - **Web & identité** — cartes de visite NFC, chartes graphiques, portfolios
 

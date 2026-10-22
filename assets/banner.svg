@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="Yannick Simoens — Directeur artistique junior, Planete Pyro Dist.">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="55%" stop-color="#11151d"/>
+      <stop offset="100%" stop-color="#161b26"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f75c7e"/>
+      <stop offset="100%" stop-color="#f75c7e" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="300" fill="url(#bg)"/>
+  <rect width="1200" height="300" fill="url(#grid)"/>
+
+  <!-- croix de réglage : coin haut droit -->
+  <g stroke="#f75c7e" stroke-opacity="0.55" stroke-width="1">
+    <line x1="1100" y1="40" x2="1140" y2="40"/>
+    <line x1="1120" y1="20" x2="1120" y2="60"/>
+  </g>
+  <circle cx="1120" cy="40" r="9" fill="none" stroke="#f75c7e" stroke-opacity="0.35"/>
+
+  <!-- filet accent -->
+  <rect x="80" y="96" width="120" height="3" rx="1.5" fill="#f75c7e"/>
+
+  <text x="80" y="150" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+        font-size="54" font-weight="700" letter-spacing="-1" fill="#e6edf3">Yannick Simoens</text>
+
+  <text x="80" y="192" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+        font-size="21" font-weight="400" letter-spacing="0.2" fill="#9aa7b6">Directeur artistique junior · Planete Pyro Dist.</text>
+
+  <text x="80" y="248" font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
+        font-size="14" letter-spacing="2.4" fill="#f75c7e" fill-opacity="0.9">DESIGN — OUTILS MAISON — PYROTECHNIE</text>
+
+  <text x="1120" y="248" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
+        font-size="14" letter-spacing="1.2" fill="#6e7b8b">yandesign.fr</text>
+
+  <rect x="0" y="297" width="1200" height="3" fill="url(#accent)"/>
+</svg>
